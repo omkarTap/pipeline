@@ -13,9 +13,11 @@ pipeline {
                     credentialsId: 'Cred'
                 ]]) {
 
-        git url: 'https://github.com/omkarTap/pipeline.git', branch: 'main'
-      }
+                git url: 'https://github.com/omkarTap/pipeline.git', branch: 'main'
+              }
+         }
     }
+  }
 
     stage('Terraform Init') {
       steps {
