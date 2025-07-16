@@ -7,7 +7,12 @@ pipeline {
 
   stages {
     stage('Checkout') {
-      steps {
+     steps {
+                withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'Cred'
+                ]]) {
+
         git url: 'https://github.com/omkarTap/pipeline.git', branch: 'main'
       }
     }
